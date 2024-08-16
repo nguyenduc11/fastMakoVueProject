@@ -1,0 +1,30 @@
+<%inherit file="base.html"/>
+
+<%def name="title()">
+    Home - My Web App
+</%def>
+
+<h1>Welcome to My Web App</h1>
+<p>This is the home page of our FastAPI and Mako-powered web application.</p>
+
+<h2>Your Todos from flask_web database</h2>
+% if todos:
+    <ul>
+        % for todo in todos:
+            <li>
+                % if 'title' in todo:
+                    ${todo['title']}
+                % elif 'item' in todo:
+                    ${todo['item']}
+                % else:
+                    Unknown Task
+                % endif
+                % if 'status' in todo:
+                    - ${todo['status']}
+                % endif
+            </li>
+        % endfor
+    </ul>
+% else:
+    <p>No todos found in the flask_web database. Add some tasks to get started!</p>
+% endif
