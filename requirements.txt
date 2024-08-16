@@ -1,5 +1,6 @@
-fastapi
-uvicorn
-mako
-python-multipart
-motor
+fastapi==0.68.0
+uvicorn==0.15.0
+mako==1.1.5
+python-multipart==0.0.5
+motor==2.5.1
+gunicorn==20.1.0
